@@ -1,0 +1,37 @@
+import { ExtractJwt, Strategy } from 'passport-jwt';
+import { PassportStrategy } from '@nestjs/passport';
+import { Injectable } from '@nestjs/common';
+import { ConfigService } from '@nestjs/config';
+import type { FastifyRequest } from 'fastify';
+
+export interface JwtPayload {
+  sub: number;
+  username?: string;
+  first_name: string;
+  iat?: number;
+  exp?: number;
+}
+
+@Injectable()
+export class JwtStrategy extends PassportStrategy(Strategy) {
+  constructor(private readonly configService: ConfigService) {
+    const jwtSecret = configService.get<string>('JWT_SECRET')!;
+
+    super({
+      jwtFromRequest: ExtractJwt.fromExtractors([
+        ExtractJwt.fromAuthHeaderAsBearerToken(),
+        (request: FastifyRequest) => request.cookies.access_token!,
+      ]),
+      ignoreExpiration: false,
+      secretOrKey: jwtSecret,
+    });
+  }
+
+  validate(payload: JwtPayload & { userId: string }) {
+    return {
+      userId: payload.userId,
+      username: payload.username,
+      firstName: payload.first_name,
+    };
+  }
+}
