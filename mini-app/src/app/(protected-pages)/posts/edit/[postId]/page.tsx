@@ -24,7 +24,7 @@ type EditPostFormProps = {
     post: Post
 }
 
-export const EditPostForm = ({post}: EditPostFormProps) => {
+const EditPostForm = ({post}: EditPostFormProps) => {
     const id = useId()  
     const router = useRouter()
 
@@ -62,10 +62,9 @@ export const EditPostForm = ({post}: EditPostFormProps) => {
         deletePost(post.id)
     }
 
-    useEffect(() => () => form.reset(), [])
-
     useEffect(() => {
         form.reset({content: post.content, status: post.status})
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [post])
 
     return (

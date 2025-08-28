@@ -25,7 +25,7 @@ type EditPromptFormProps = {
     prompt: Prompt
 }
 
-export const EditPromptForm = ({prompt}: EditPromptFormProps) => {
+const EditPromptForm = ({prompt}: EditPromptFormProps) => {
     const id = useId()  
     const router = useRouter()
 
@@ -65,7 +65,7 @@ export const EditPromptForm = ({prompt}: EditPromptFormProps) => {
 
     useEffect(() => {
         form.reset({text: prompt.text, name: prompt.name})
-        return () => form.reset()
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [prompt])
 
     return (

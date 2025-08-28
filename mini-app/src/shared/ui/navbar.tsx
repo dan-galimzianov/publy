@@ -1,6 +1,6 @@
 'use client';
 
-import { LayoutPanelLeft, MessageSquare, Plus } from 'lucide-react';
+import { MessageSquare, Plus } from 'lucide-react';
 import { useRouter, usePathname } from 'next/navigation';
 import { cn } from '@/shared/tailwind';
 
@@ -15,7 +15,7 @@ const navItems = [
     label: 'Посты',
     path: '/posts',
   }
-  // {
+// {
   //   icon: LayoutPanelLeft,
   //   label: 'Промпты',
   //   path: '/prompts',

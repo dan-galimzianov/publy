@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import { Sparkles } from 'lucide-react';
 import { Button } from '@/shared/ui';
 import { useRouter } from 'next/navigation';
 import { useAiGenerationStore } from '@/shared/stores';

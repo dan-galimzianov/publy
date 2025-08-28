@@ -1,4 +1,4 @@
-import { QueryOptions, useQuery, UseQueryOptions } from "@tanstack/react-query";
+import { useQuery, UseQueryOptions } from "@tanstack/react-query";
 import { clientApi } from "@/shared/api/client";
 import { Prompt } from "@/types/prompt";
 

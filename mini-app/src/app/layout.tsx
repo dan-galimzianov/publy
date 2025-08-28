@@ -2,8 +2,6 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { QueryClientProvider } from "@/shared/react-query";
-import { dehydrate, HydrationBoundary } from "@tanstack/react-query";
-import { getQueryClient } from "@/shared/react-query";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

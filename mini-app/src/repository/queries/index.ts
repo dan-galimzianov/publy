@@ -1,4 +1,3 @@
-export * from "./useHelloQuery";
 export * from "./useMyProfileQuery";
 export * from "./usePostsQuery";
 export * from "./usePostQuery";

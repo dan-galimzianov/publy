@@ -17,7 +17,5 @@ export { ErrorState } from "./error-state";
 export { EmptyState } from "./empty-state";
 export { Toast, useToast } from "./toast";
 export { FormatSelector } from "./format-selector";
-export { RichTextEditor } from "./rich-text-editor";
-export { PromptBuilder } from "./prompt-builder";
 export { Card, CardHeader, CardTitle, CardDescription } from "./card";
 export { Drawer, DrawerTrigger, DrawerContent, DrawerHeader } from "./drawer";

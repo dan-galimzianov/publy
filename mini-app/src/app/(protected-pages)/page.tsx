@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect } from 'react';
-import { Mic, Type, Sparkles } from 'lucide-react';
+import { Mic, Type } from 'lucide-react';
 import { Header, useToast } from '@/shared/ui';
 import { useRouter } from 'next/navigation';
 import { useCreatePostStore, useAiGenerationStore } from '@/shared/stores';
@@ -10,7 +10,7 @@ export default function CreateSelectPage() {
   const router = useRouter();
   const { ToastContainer } = useToast();
   
-  const { reset, setCurrentStep, setInputSource } = useCreatePostStore();
+  const { reset, setCurrentStep } = useCreatePostStore();
   const { reset: resetAiGeneration } = useAiGenerationStore();
 
   // Сбрасываем состояние при входе на главную страницу

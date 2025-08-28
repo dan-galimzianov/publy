@@ -35,6 +35,7 @@ export function withAiStep<T extends AiStepComponentProps>(
       if (!canProceedFromCurrentPosition()) {
         redirectToValidStep();
       }
+      // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [currentStep, step, setCurrentStep]);
 
     const canProceedFromCurrentPosition = (): boolean => {

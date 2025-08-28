@@ -1,5 +1,5 @@
-import { Button, Drawer, DrawerContent, DrawerHeader, DrawerTrigger, Input } from "@/shared/ui"
-import { DrawerFooter, DrawerTitle } from "@/shared/ui/drawer"
+import { Button, Drawer, DrawerContent, DrawerTrigger, Input } from "@/shared/ui"
+import { DrawerFooter } from "@/shared/ui/drawer"
 import { Loader2, PlusIcon } from "lucide-react"
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
