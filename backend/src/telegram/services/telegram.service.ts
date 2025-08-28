@@ -29,9 +29,8 @@ export class TelegramService implements OnModuleInit {
     this.bot.on('message', (ctx: Context) => {
       this.sendMiniApp(ctx, miniAppUrl);
     });
-
     // Запускаем бота
-    await this.bot.launch();
+    void this.bot.launch();
     this.logger.log('Telegram бот запущен');
 
     // Graceful stop

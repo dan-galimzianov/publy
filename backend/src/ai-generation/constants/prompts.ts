@@ -177,12 +177,6 @@ export const HARDCODED_OPTIONS = {
       description: 'Самая мощная модель OpenAI',
     },
     {
-      id: 'deepseek-chat',
-      provider: 'deepseek',
-      name: 'DeepSeek v3.1',
-      description: 'Мощная модель DeepSeek для генерации контента',
-    },
-    {
       id: 'claude-3-7-sonnet-latest',
       provider: 'anthropic',
       name: 'Claude 3.7 Sonnet',
