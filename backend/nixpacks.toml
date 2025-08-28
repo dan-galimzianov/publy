@@ -4,7 +4,7 @@ providers = ["node"]
 cmds = ["npm ci --prefix backend"]
 
 [phases.build]
-cmds = ["cd backend && npx prisma generate", "npm run build --prefix backend", "cd backend && npx prisma db push"]
+cmds = ["cd backend && npx prisma generate", "npm run build --prefix backend"]
 
 [start]
-cmd = "npm start --prefix backend"
+cmd = "cd backend && npx prisma db push && npm start"
