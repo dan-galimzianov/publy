@@ -1,17 +1,10 @@
-# nixpacks.toml
-
-[phases.setup]
-# Устанавливаем Node.js (можно выбрать 18, 20 или 22 — зависит от того, что поддерживает ваш Next.js)
-nixPkgs = ["nodejs_20"]
+providers = ["node"]
 
 [phases.install]
-# Устанавливаем зависимости именно в папке mini-app
 cmds = ["npm ci --prefix mini-app"]
 
 [phases.build]
-# Сборка Next.js
 cmds = ["npm run build --prefix mini-app"]
 
 [start]
-# Запуск в production
 cmd = "npm start --prefix mini-app"
