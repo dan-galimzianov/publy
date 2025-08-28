@@ -7,6 +7,7 @@ import { ValidationPipe } from '@nestjs/common';
 import { AppModule } from './app.module';
 import cors from '@fastify/cors';
 import cookie from '@fastify/cookie';
+import { ConfigService } from '@nestjs/config';
 
 async function bootstrap() {
   const app = await NestFactory.create<NestFastifyApplication>(
@@ -22,6 +23,7 @@ async function bootstrap() {
       forbidNonWhitelisted: true,
     }),
   );
+  const configService = app.get(ConfigService);
 
   // Регистрируем плагин для работы с cookies
   await app.register(cookie, {
@@ -29,7 +31,7 @@ async function bootstrap() {
   });
 
   await app.register(cors, {
-    origin: 'http://localhost:3001',
+    origin: configService.get('CORS_ORIGIN') as string,
     credentials: true,
   });
 

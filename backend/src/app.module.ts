@@ -4,7 +4,7 @@ import { AuthModule } from './auth/auth.module';
 import { PrismaModule } from './prisma/prisma.module';
 import { PublicationsModule } from './publications/publications.module';
 import { AiGenerationModule } from './ai-generation/ai-generation.module';
-import { BullModule } from '@nestjs/bullmq';
+import { TelegramModule } from './telegram/telegram.module';
 
 @Module({
   imports: [
@@ -12,16 +12,11 @@ import { BullModule } from '@nestjs/bullmq';
       isGlobal: true,
       envFilePath: '.env',
     }),
-    BullModule.forRoot({
-      connection: {
-        host: 'localhost',
-        port: 6379,
-      },
-    }),
     PrismaModule,
     AuthModule,
     PublicationsModule,
     AiGenerationModule,
+    TelegramModule,
   ],
 })
 export class AppModule {}

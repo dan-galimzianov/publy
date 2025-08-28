@@ -50,6 +50,9 @@ let PostsService = class PostsService {
                     },
                 },
             },
+            orderBy: {
+                createdAt: 'desc',
+            },
         });
     }
     async findOne(id, userId) {

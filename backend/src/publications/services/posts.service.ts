@@ -45,6 +45,9 @@ export class PostsService {
           },
         },
       },
+      orderBy: {
+        createdAt: 'desc',
+      },
     });
   }
 

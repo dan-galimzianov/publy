@@ -7,65 +7,65 @@ export declare class PostsService {
     create(createPostDto: CreatePostDto, userId: string): Promise<{
         user: {
             id: string;
-            name: string;
             username: string;
+            name: string;
         };
     } & {
         id: string;
+        content: string;
+        status: import("@prisma/client").$Enums.PostStatus;
         createdAt: Date;
         updatedAt: Date;
         userId: string;
-        content: string;
-        status: import("@prisma/client").$Enums.PostStatus;
     }>;
     findAll(userId: string): Promise<({
         user: {
             id: string;
-            name: string;
             username: string;
+            name: string;
         };
     } & {
         id: string;
+        content: string;
+        status: import("@prisma/client").$Enums.PostStatus;
         createdAt: Date;
         updatedAt: Date;
         userId: string;
-        content: string;
-        status: import("@prisma/client").$Enums.PostStatus;
     })[]>;
     findOne(id: string, userId: string): Promise<{
         user: {
             id: string;
-            name: string;
             username: string;
+            name: string;
         };
     } & {
         id: string;
+        content: string;
+        status: import("@prisma/client").$Enums.PostStatus;
         createdAt: Date;
         updatedAt: Date;
         userId: string;
-        content: string;
-        status: import("@prisma/client").$Enums.PostStatus;
     }>;
     update(id: string, updatePostDto: UpdatePostDto, userId: string): Promise<{
         user: {
             id: string;
-            name: string;
             username: string;
+            name: string;
         };
     } & {
         id: string;
+        content: string;
+        status: import("@prisma/client").$Enums.PostStatus;
         createdAt: Date;
         updatedAt: Date;
         userId: string;
-        content: string;
-        status: import("@prisma/client").$Enums.PostStatus;
     }>;
     remove(id: string, userId: string): Promise<{
         id: string;
+        content: string;
+        status: import("@prisma/client").$Enums.PostStatus;
         createdAt: Date;
         updatedAt: Date;
         userId: string;
-        content: string;
-        status: import("@prisma/client").$Enums.PostStatus;
     }>;
 }

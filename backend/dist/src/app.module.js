@@ -13,7 +13,7 @@ const auth_module_1 = require("./auth/auth.module");
 const prisma_module_1 = require("./prisma/prisma.module");
 const publications_module_1 = require("./publications/publications.module");
 const ai_generation_module_1 = require("./ai-generation/ai-generation.module");
-const bullmq_1 = require("@nestjs/bullmq");
+const telegram_module_1 = require("./telegram/telegram.module");
 let AppModule = class AppModule {
 };
 exports.AppModule = AppModule;
@@ -24,16 +24,11 @@ exports.AppModule = AppModule = __decorate([
                 isGlobal: true,
                 envFilePath: '.env',
             }),
-            bullmq_1.BullModule.forRoot({
-                connection: {
-                    host: 'localhost',
-                    port: 6379,
-                },
-            }),
             prisma_module_1.PrismaModule,
             auth_module_1.AuthModule,
             publications_module_1.PublicationsModule,
             ai_generation_module_1.AiGenerationModule,
+            telegram_module_1.TelegramModule,
         ],
     })
 ], AppModule);
